@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<software nome="dispersao">
+	
+	<!-- 1: 1a Atividade -->
+	<item><id>a1</id>
+		<tipo>atividade</tipo>
+		<rotulo>1</rotulo>
+		<nome>Tabela de Dados</nome>
+		<descricao>Nesta atividade, você deve preencher uma tabela com dados sobre seus colegas de sala de aula, e poderá observar diversos valores de medidas resumo do seu conjunto de dados, como média, mediana, quantil 25% e quantil 75%.</descricao>
+		<posicao>
+			<coluna>1</coluna>
+			<altura>1</altura>
+		</posicao>
+	</item>
+	
+	<!-- 2: 2a Atividade -->
+	<item><id>a2</id>
+		<estadoinicial>0</estadoinicial>
+		<tipo>atividade</tipo>
+		<rotulo>2</rotulo>
+		<nome>Gráfico de Dispersão</nome>
+		<descricao>Nesta atividade, você construirá o gráfico de dispersão entre o número do calçado e a altura observados na amostra. Essa informação pode ser resumida pelo coeficiente de correlação linear.</descricao>
+		<posicao>
+			<coluna>2</coluna>
+			<altura>1</altura>
+		</posicao>
+		<ligacoes>
+			<com>a1</com>
+		</ligacoes>
+	</item>
+
+</software>

@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal" />
+    <link rel="alternate stylesheet" type="text/css" href="css/estilo2.css" title="grande" />
+
+    <link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+
+    <script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+    <script type="text/javascript" src="scripts/protoaculous.js"></script>
+    <script type="text/javascript" src="scripts/salvaLocal.js"></script>
+    <script type="text/javascript" src="scripts/popup.js"></script>
+    <script type="text/javascript" src="scripts/notas.js"></script>
+    <script type="text/javascript" src="scripts/bloco.js"></script>
+    <script type="text/javascript" src="scripts/calculadora.js"></script>
+    <script type="text/javascript" src="scripts/rolagem.js"></script>
+
+    <script type="text/javascript" src="scripts/interface.js"></script>
+    <script type="text/javascript" src="scripts/referencias.js"></script>
+    <script type="text/javascript" src="scripts/curiosidades.js"></script>
+
+    <script type="text/javascript" src="scripts/funcoes_gerais.js"></script>
+    <script type="text/javascript" src="scripts/frequencias.js"></script>
+    <script type="text/javascript" src="scripts/atividade2_correcao.js"></script>
+    <script type="text/javascript" src="scripts/atividade2_conteudo.js"></script>
+
+    <script type="text/javascript" src="scripts/inputs.js"></script>
+    <script type="text/javascript">
+        var PosicaoAtual = {
+            Atividade: 2,
+            Parte: 5
+        };
+        var ProximaParte = 'mapa.html';
+    </script>
+
+    <title>Medidas do corpo: Gráfico de Dispersão</title>
+</head>
+
+<body onunload="">
+    <div id="container">
+        <div id="cabecalho">
+            <div id="onde_estou">
+                <div class="numero_atividade">2</div>
+                <h1>Medidas do corpo</h1> <img src="img_layout/setinha-cabecalho.gif" alt="" />
+                <h2>Gráfico de Dispersão</h2>
+            </div>
+            <div id="logo"></div>
+            <div id="links">
+                <a href="mapa.html">Mapa</a>
+                <a href="introducao.html">Introdução</a>
+                <a href="index.html">Início</a>
+            </div>
+            <div class="limpador"></div>
+        </div>
+        <ul id="partes">
+        </ul>
+
+        <div id="software">
+            <div id="conteudo">
+                <div class="salva_local">
+                </div>
+
+                <div class="texto_solto">
+                    <p>
+                        Será que o número do calçado e a altura de uma pessoa são grandezas relacionadas? Quer dizer, será que pessoas mais altas têm maior ou menor número de calçado? Ou será que número de calçado não depende da altura da pessoa?
+                    </p>
+                    <p>
+                        Uma medida resumo que permite mensurar essa dependência é o chamado "coeficiente de correlação linear", denotado por "r". Em uma amostra, ele é a média dos produtos z<sub>x</sub>.z<sub>y</sub> para os pontos da amostra:
+                    </p>
+                    <p class="formula"> <img src="imgs/equacao4.png" alt="imagem" /> </p>
+
+                    <p>
+                        Intuitivamente, quando a maioria dos pontos está no 1&#176; ou no 3&#176; quadrantes, r deve ser positivo, revelando uma associação positiva entre as variáveis, no sentido em que, à medida que uma delas assume valores maiores, a outra deve aumentar também.
+                        Se a maioria dos pontos estiver no 2&#176; ou no 4&#176; quadrantes, r deve ser negativo, indicando uma associação negativa entre as variáveis: à medida que uma delas assume valores maiores, a outra deve diminuir. Se não houver
+                        nenhuma tendência crescente nem decrescente, r deve ser próximo de zero, indicando que não há associação entre as variáveis.
+                    </p>
+                    <p>
+                        No entanto, é importante ressaltar que a análise gráfica deve sempre ser a primeira a ser realizada, pela informação mais completa que ela apresenta. As medidas-resumo são apenas características numéricas que podem, eventualmente, não fornecer informação
+                        tão completa sobre a amostra quanto um bom gráfico é capaz de fazer.
+                    </p>
+                    <br class="limpador" />
+                </div>
+
+                <div id="questoes">
+                    <div class="caderno">
+                        <h2>Responder no caderno</h2>
+                        <ol>
+                            <li>
+                                <h3>Questão 1</h3>
+                                <ol>
+                                    <li class="ultima">
+                                        <span class="icone_questao">A</span>
+                                        <p>
+                                            O coeficiente de correlação da sua amostra é <span id="coeficienteCorrelacao"></span>. Discuta, com base nesse valor e no gráfico ao lado, se existe alguma relação entre a altura e o tamanho do pé na sua amostra.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <a id="link_continuar">
+                        <span class="escondido">Continuar</span>
+                    </a>
+                    <div class="limpador"></div>
+                </div>
+                <div class="limpador"></div>
+            </div>
+        </div>
+        <br class="limpador" />
+        <div id="rodape">
+            <a href="http://m3.ime.unicamp.br" target="_blank">Sobre o Matemática Multimídia</a>
+        </div>
+    </div>
+    <div id="applet">
+        <div id="borda_applet" class="altura_applet_4 borda sem_fundo">
+            <!--
+				<applet name="ggbApplet" code="geogebra.GeoGebraApplet" codebase="./" archive="jars/geogebra.jar" width="519" height="380" MAYSCRIPT>
+					<param name="filename" value="applets/eixo_final_metros.ggb" />
+					<param name="framePossible" value="false" />
+					<param name="showResetIcon" value="false" />
+					<param name="enableRightClick" value="false" />
+					<param name="enableChooserPopups" value="false" />
+					<param name="enableShiftDragZoom" value="false" />
+					<param name="showMenuBar" value="false" />
+					<param name="showToolBar" value="false" />
+					<param name="showToolBarHelp" value="false" />
+					<param name="showAlgebraInput" value="false" />
+					<param name="scriptable" value="true" />   
+					<param name="language" value="en" /> 					
+				</applet>			
+				-->
+            <div id="ggbApplet"></div>
+            <script>
+                var ggbApp = new GGBApplet({
+                    "appName": "classic",
+                    "width": 519,
+                    "height": 380,
+                    "filename": "applets/eixo_final_metros.ggb",
+                    "showResetIcon": false,
+                    "enableRightClick": false,
+                    "showMenuBar": false,
+                    "showToolBar": false,
+                    "showToolBarHelp": false,
+                    "showAlgebraInput": false,
+                    "enableShiftDragZoom": false,
+                    "useBrowserForJS": true
+                }, true);
+                window.addEventListener("load", function() {
+                    ggbApp.inject('ggbApplet');
+                });
+            </script>
+
+            <div class="canto sup_esq"></div>
+            <div class="canto sup_dir"></div>
+            <div class="canto inf_esq"></div>
+            <div class="canto inf_dir"></div>
+            <div id="associacao"></div>
+        </div>
+        <div id="comandos">
+        </div>
+    </div>
+    <div id="associado"></div>
+    <div id="ferramentas">
+        <a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+        <a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+        <!--
+        <a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+        <a href="javascript:setActiveStyleSheet('grande');" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+        -->
+    </div>
+    <div id="calc" class="escondido"></div>
+</body>
+
+</html>

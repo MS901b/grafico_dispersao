@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal" />
+    <link rel="alternate stylesheet" type="text/css" href="css/estilo2.css" title="grande" />
+
+    <link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+    <!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
+		<![endif]-->
+    <!--[if lte IE 6]>	
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
+		<![endif]-->
+
+    <script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+    <script type="text/javascript" src="scripts/protoaculous.js"></script>
+    <script type="text/javascript" src="scripts/salvaLocal.js"></script>
+    <script type="text/javascript" src="scripts/popup.js"></script>
+    <script type="text/javascript" src="scripts/notas.js"></script>
+    <script type="text/javascript" src="scripts/bloco.js"></script>
+    <script type="text/javascript" src="scripts/calculadora.js"></script>
+    <script type="text/javascript" src="scripts/rolagem.js"></script>
+
+
+    <!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
+    <script type="text/javascript" src="scripts/interface.js"></script>
+    <script type="text/javascript" src="scripts/referencias.js"></script>
+    <script type="text/javascript" src="scripts/curiosidades.js"></script>
+
+    <script type="text/javascript" src="scripts/funcoes_gerais.js"></script>
+    <script type="text/javascript" src="scripts/tabela_funcoes.js"></script>
+    <script type="text/javascript" src="scripts/frequencias.js"></script>
+    <script type="text/javascript" src="scripts/atividade1_correcao.js"></script>
+    <script type="text/javascript" src="scripts/atividade1_conteudo.js"></script>
+    <script type="text/javascript" src="scripts/inputs.js"></script>
+
+    <script type="text/javascript">
+        var PosicaoAtual = {
+            Atividade: 1,
+            Parte: 0
+        };
+        var ProximaParte = 'atividade1_parte2.html';
+
+        var Perguntas = $H({
+            salva_tabela: {
+                conteudo: 'Deseja salvar os dados?',
+                layout: ['seta_baixo', 'esquerda'],
+                largura: 7,
+                callback: cb_salvar_tabela,
+                // se o usuário clicar em 'Sim', o popup chamará a funcao funcao_pede na qual this.resultado será 'sim'
+                // Veja que essa função deve estar definida, ou ser definida nesse exato momento (como no exemplo "pede2")
+                respostas: [{
+                    sim: 'Sim'
+                }, {
+                    nao: 'Não'
+                }]
+            },
+            limpar_dados: {
+                conteudo: 'Deseja salvar os dados?',
+                layout: ['seta_baixo', 'esquerda'],
+                largura: 7,
+                callback: cb_limpar_tabela,
+                // se o usuário clicar em 'Sim', o popup chamará a funcao funcao_pede na qual this.resultado será 'sim'
+                // Veja que essa função deve estar definida, ou ser definida nesse exato momento (como no exemplo "pede2")
+                respostas: [{
+                    sim: 'Sim'
+                }, {
+                    nao: 'Não'
+                }]
+            }
+        });
+        document.observe('dom:afterPermiteContinuar', function(event) {});
+    </script>
+
+    <title>Medidas do corpo: Gráfico de Dispersão</title>
+</head>
+
+<body onunload="">
+
+    <!--
+	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
+	Veja um exemplo no arquivo exemplo_correcao.js
+	-->
+    <div id="container">
+        <div id="cabecalho">
+            <div id="onde_estou">
+                <div class="numero_atividade">1</div>
+                <h1>Medidas do corpo: Gráfico de Dispersão</h1> <img src="img_layout/setinha-cabecalho.gif" alt="" />
+                <h2>Tabela de dados</h2>
+            </div>
+            <div id="logo"></div>
+            <div id="links">
+                <a id="mapa" href="mapa.html">Mapa</a>
+                <a href="introducao.html">Introdução</a>
+                <a href="index.html">Início</a>
+            </div>
+
+            <div class="limpador"></div>
+        </div>
+        <!-- Por enquanto o controle de partes trancadas não será implementado-->
+        <ul id="partes">
+
+        </ul>
+
+        <div id="software">
+            <div id="conteudo">
+                <div class="salva_local">
+                </div>
+
+                <div class="texto_solto">
+                    <span id="msg_alerta_tabela">
+						</span>
+                    <p>
+                        A tabela apresenta três colunas: a primeira para o gênero ("F" ou "M"), a segunda para o número do calçado, e a terceira para a altura (em centímetros). Cada linha deve conter a informação de cada uma das pessoas da amostra. Sugere-se que esses dados
+                        sejam coletados entre seus colegas de sala de aula.
+                    </p>
+                </div>
+
+                <div class="caixa instrucoes">
+                    <h2>Instruções</h2>
+                    <p>Na coluna de gênero, use a letra "F" para feminino, e "M" para masculino;</p>
+                    <p>Anote apenas um número de calçado para cada pessoa. Assim, se alguém calça 36/37, por exemplo, coloque o menor valor na tabela, 36;</p>
+                    <p>Escreva os valores da altura em centímetros, como, por exemplo, 154 cm;</p>
+                    <p>A tabela pode ficar com linhas em branco. O importante é que as linhas preenchidas tenham as três variáveis digitadas corretamente;</p>
+                    <p>A tabela preenchida ficará disponível no bloco de notas;</p>
+                    <p>Uma vez preenchida a tabela, salve os dados antes de continuar.</p>
+                    <p>O conjunto de dados deve ter pelo menos dez linhas válidas, com pelo menos um indivíduo de cada gênero;</p>
+                    <br>
+                </div>
+
+                <!--
+					 A caixa de valor inicial não é obrigatória, ela é usada quando o software precisa de algum parametro
+					para iniciar, após iniciar, deve-se adicionar a classe "desabilitada" na div e desabilitar o input também.
+					É possível colocar mais de um item a ser inicializado por parte, mas somente a primeira terá o titulo em <h2>;
+					-->
+
+                <div id="questoes">
+
+                    <!--
+						Para o Script se localizar, essa div "texto_genérico" é necessária. Caso não tenha texto aqui, deixe ela vazia.
+						Coloque aqui qualquer texto genérico de instruções e teoria.
+						-->
+                    <div id="texto_generico">
+                        <br>
+                        <p>
+                            A simples observação de uma tabela de dados não permite constatar a existência de um padrão para as variáveis em estudo, tampouco associações entre elas. Como alternativa, as medidas resumo consistem numa síntese numérica das variáveis analisadas, facilitando,
+                            assim, a análise dos dados.
+                        </p>
+                        <p>
+                            A seguir, você irá conhecê-las.
+                        </p>
+                    </div>
+
+                    <!-- Aqui vão ser colocadas as questões, via JavaScript.-->
+
+                    <!--<a href="javascript:" id="corrigir_tudo">Corrigir todas as questões</a>-->
+
+                    <a id="link_continuar">
+                        <span class="escondido">Continuar</span>
+                    </a>
+                    <div class="limpador"></div>
+                </div>
+            </div>
+        </div>
+        <br class="limpador" />
+        <div id="rodape">
+            <a href="http://m3.ime.unicamp.br" target="_blank">Sobre o Matemática Multimídia</a>
+        </div>
+    </div>
+    <div id="applet">
+        <div id="borda_applet" class="altura_applet_4 borda sem_fundo">
+            <div class="canto sup_esq"></div>
+            <div class="canto sup_dir"></div>
+            <div class="canto inf_esq"></div>
+            <div class="canto inf_dir"></div>
+            <div id="associacao" style="position:relative; top:0px;"></div>
+            <div style="float:left;">
+                <div id="dadosEntrada" style="overflow:auto; height: 370px; width: 520px;">
+                    <table border="0">
+                        <tr>
+                            <td valign="top">
+                                <table id="tabelaDados" name="tabelaDados" class="tabela">
+                                    <THEAD>
+                                        <tr>
+                                            <th class="largura3">Remover linha</th>
+                                            <th class="largura3">Gênero</th>
+                                            <th class="largura4">Número do calçado</th>
+                                            <th class="largura3">Altura (cm)</th>
+                                            <th class="largura1"> </th>
+                                        </tr>
+                                    </THEAD>
+                                    <TBODY>
+                                    </TBODY>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <p><strong>Linhas válidas:</strong> <span id="nDadosValidos"><strong>0</strong></span></p>
+                <br>
+            </div>
+
+            <div id="comandos">
+                <input type="button" class="botao botao_grande" value="Adicionar 5 linhas" id="add5row" />
+                <input type="button" class="botao botao_grande" value="Salvar dados" id="salva_tabela" />
+                <input type="button" class="botao botao_grande" value="Limpar dados" id="limpar_dados" />
+                <br><br class="limpador" />
+                <p><span id="confirma_gravacao" style="color : #ff0000;"> </span></p>
+                <p><span id="msg_ok"></span></p>
+                <br>
+            </div>
+            <span id="dadosSalvos"></span>
+        </div>
+        <div id="texto_generico">
+
+
+        </div>
+
+
+    </div>
+
+    <div id="associado"></div>
+
+    <div id="ferramentas">
+        <a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+        <a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+        <!--
+			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:setActiveStyleSheet('grande');" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+			-->
+    </div>
+    <div id="calc" class="escondido"></div>
+</body>
+
+</html>

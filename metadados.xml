@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurso>
+    <titulo>Medidas do Corpo: Gráfico de Dispersão</titulo>
+    <descricao>Neste software, o aluno irá estudar análise exploratória de dados para duas variáveis: número do calçado e altura. A relação entre essas duas variáveis quantitativas será analisada através do chamado gráﬁco de dispersão e do coeﬁciente de correlação linear.</descricao>
+    <estado>finalizado</estado>
+	<imagem>figura_launcher.jpg</imagem>
+	<tipo>software educacional, animação</tipo>
+	<objetivos>Analisar representação gráﬁca de dados estatísticos; Familiarizar o aluno com gráﬁco de dispersão e análise estatística bivariada; Utilizar o conceito de correlação linear.</objetivos>
+	<observacoes>Este software precisa de máquina java 1.6+ e plugin flash 9.0+.</observacoes>
+	<nivel>Ensino Médio</nivel>
+	<componente>Matemática</componente>
+	<temas>Análise de Dados e Probabilidade</temas>
+	<autores>Laura letícia Ramos Rifo</autores>
+	<palavras_chaves>projeto m³, matemática, unicamp, Estatística, Interpretação de Gráﬁcos, Gráﬁcos bivariados,gráﬁco de dispersão,Coeﬁciente de correlação linear.</palavras_chaves>
+	<assunto>Estatística, Interpretação de Gráﬁcos e Dados; Gráﬁcos bivariados para duas variáveis quantitativas: gráﬁco de dispersão; Coeﬁciente de correlação linear.</assunto>
+</recurso>
