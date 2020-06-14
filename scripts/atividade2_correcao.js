@@ -20,6 +20,8 @@ function checkInits() {
         //Nao tem GeoGebra
         GGBLoaded = true;
     }
+
+    GGBLoaded = true;
     // Checagem se tanto SalvaLocal e Geogebra foram carregados.
     if (SalvaLocalLoaded && GGBLoaded && HTMLLoaded) InitOnLoad();
 }
@@ -676,6 +678,7 @@ function tudoCerto() {
 }
 
 function set_inicial_p1() {
+    console.log("set inicial COMEÇO");
     var dados = getRespSoft("tabela_principal", "estat-dados");
     dados = eval(dados);
     var num_dados = dados.length;
@@ -740,6 +743,8 @@ function set_inicial_p1() {
 
         permiteContinuar(true);
     }
+
+    console.log("set inicial FINAL");
 }
 
 function unset_inicial_p1() {
