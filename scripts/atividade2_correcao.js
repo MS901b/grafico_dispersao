@@ -16,7 +16,7 @@ function ggbOnInit() {
 }
 
 function checkInits() {
-    if (PosicaoAtual.Parte == 5) {
+    if (PosicaoAtual.Parte == 4) {
         //Nao tem GeoGebra
         GGBLoaded = true;
     }
@@ -672,7 +672,7 @@ function selecionouA3_P3_Q5_B() {
 		FUNCOES DE USO GERAL
 **************************************/
 function tudoCerto() {
-    if (PosicaoAtual.Parte == 5) { //Ultima parte
+    if (PosicaoAtual.Parte == 4) { //Ultima parte
         setAtividade('atividade_2', 3, true); //atividade_2 estah feita
     }
 }
