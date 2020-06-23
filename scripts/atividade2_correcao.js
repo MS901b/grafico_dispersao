@@ -266,6 +266,7 @@ function plotarTodosPontos() {
 }
 
 function plotarMeuPonto() {
+    //console.log("plotarMeuPonto COMEÇO")
     var applet = document.ggbApplet;
     var dados = getRespSoft("tabela_principal", "estat-dados");
     dados = eval(dados);
@@ -274,11 +275,13 @@ function plotarMeuPonto() {
 
     applet.setFixed('M1', false);
     applet.evalCommand('M1 = (' + Number(dados[minhaLinha].calcado) + ',' + (Number(dados[minhaLinha].altura)) + ')');
-    applet.evalCommand('meuNome = text["' + getResp('meuNome') + '",M1+Desvio]'); //O desvio estah representado pelo ponto Desvio
+    //applet.evalCommand('meuNome = text["' + getResp('meuNome') + '",M1+Desvio]'); //O desvio estah representado pelo ponto Desvio
     applet.setFixed('M1', true);
     applet.setColor('M1', 255, 0, 0);
     applet.setLayer('M1', 3);
     applet.setLayer('meuNome', 4);
+
+    //console.log("plotarMeuPonto FINAL");
 }
 
 function ajustaZoom() {
@@ -678,7 +681,7 @@ function tudoCerto() {
 }
 
 function set_inicial_p1() {
-    console.log("set inicial COMEÇO");
+    //console.log("set inicial COMEÇO");
     var dados = getRespSoft("tabela_principal", "estat-dados");
     dados = eval(dados);
     var num_dados = dados.length;
@@ -744,7 +747,7 @@ function set_inicial_p1() {
         permiteContinuar(true);
     }
 
-    console.log("set inicial FINAL");
+    //console.log("set inicial FINAL");
 }
 
 function unset_inicial_p1() {
