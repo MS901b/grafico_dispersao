@@ -275,7 +275,7 @@ function plotarMeuPonto() {
 
     applet.setFixed('M1', false);
     applet.evalCommand('M1 = (' + Number(dados[minhaLinha].calcado) + ',' + (Number(dados[minhaLinha].altura)) + ')');
-    //applet.evalCommand('meuNome = text["' + getResp('meuNome') + '",M1+Desvio]'); //O desvio estah representado pelo ponto Desvio
+    applet.evalCommand('meuNome = Text["' + getResp('meuNome') + '",M1+Desvio]'); //O desvio estah representado pelo ponto Desvio
     applet.setFixed('M1', true);
     applet.setColor('M1', 255, 0, 0);
     applet.setLayer('M1', 3);
