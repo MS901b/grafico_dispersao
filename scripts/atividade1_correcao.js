@@ -292,7 +292,8 @@ function cb_salvar_tabela() {
 
 function salvaTabela() {
     var array_dados = criaArrayDados();
-    var oldTabela = getRespSoft("tabela_principal", "estat-dados");
+    var oldTabela = getRespSoft("tabela_principal", "estat-dados") || ""
+    console.log(oldTabela);
 
     // Verifica se há dados a serem gravados
     if (array_dados.length != 0) {

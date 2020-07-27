@@ -271,15 +271,24 @@ function plotarMeuPonto() {
     var dados = getRespSoft("tabela_principal", "estat-dados");
     dados = eval(dados);
 
-    var minhaLinha = getResp('minhaLinha');
+    var minhaLinha = getResp('minhaLinha')
+    var calcado = Number(dados[minhaLinha].calcado);
+    var altura = (Number(dados[minhaLinha].altura));
 
-    applet.setFixed('M1', false);
-    applet.evalCommand('M1 = (' + Number(dados[minhaLinha].calcado) + ',' + (Number(dados[minhaLinha].altura)) + ')');
-    applet.evalCommand('meuNome = Text["' + getResp('meuNome') + '",M1+Desvio]'); //O desvio estah representado pelo ponto Desvio
+
+    applet.evalCommand('M1 = (' + calcado + ',' + altura + ')');
     applet.setFixed('M1', true);
     applet.setColor('M1', 255, 0, 0);
-    applet.setLayer('M1', 3);
-    applet.setLayer('meuNome', 4);
+    applet.setLabelStyle('M1', 2);
+    applet.setLabelVisible('M1', true);
+
+
+    applet.evalCommand('meuNome = Text["' + getResp('meuNome') + '",M1+Desvio]'); //O desvio estah representado pelo ponto Desvio
+    applet.setLayer('meuNome', 1);
+    applet.setColor('meuNome', 255, 0, 0);
+    applet.setLabelVisible('meuNome', true);
+
+
 
     //console.log("plotarMeuPonto FINAL");
 }
