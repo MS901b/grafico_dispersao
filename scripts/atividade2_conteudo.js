@@ -49,8 +49,8 @@ var Questoes = [{ //Parte 1
                 corrigir: corrige_q_2,
                 dados: '<span class="a_esquerda">[</span><div id="corretor_questao_2_a_1"><input id="questao_2_a_1" style="width:40px; margin: 0 5px !important;"/></div><span class="a_esquerda antes_depois depois">;</span><div id="corretor_questao_2_a_2"><input id="questao_2_a_2" style="width:40px; margin: 0 5px !important;"/></div><div class="a_esquerda" style="margin-right:5px;"><span>]</span></div><br class="limpador" />',
                 enunciado: 'Com este novo sistema de eixos coordenados, qual é a posição do ponto referente a você?',
-                msgErro: 'Faça a diferença entre o seu número de sapato e a média para obter a nova abscissa. Faça o mesmo com a altura para obter a nova ordenada.',
-                msgAjuda: 'Observe as distâncias horizontal e vertical do ponto até a nova origem. Dê a resposta com duas casas decimais.'
+                msgErro: 'Faça a diferença entre o seu número de sapato e a média para obter a nova abscissa. Faça o mesmo com a altura para obter a nova ordenada. Certifique-se dos sinais.',
+                msgAjuda: 'Observe as distâncias horizontal e vertical do ponto até a nova origem. Dê a resposta com duas casas decimais, caso existam'
             }]
         }
     },
@@ -64,7 +64,7 @@ var Questoes = [{ //Parte 1
                     associado: true,
                     selecionada: selecionouA3_P3_Q4_A,
                     enunciado: 'Movendo o <a id="elemento_azul">elemento azul</a> destacado posicione-o de forma que sua distância até a origem seja igual a um desvio padrão da variável "número do calçado"',
-                    msgErro: 'Verifique se o ponto está posicionado no valor do desvio-padrão do número do calçado.',
+                    msgErro: 'Verifique se o ponto está posicionado no valor do desvio-padrão do número do calçado. Observe a legenda “Desvio Padrão do Calçado” abaixo do gráfico.',
                     msgAjuda: 'O valor do desvio padrão do número do calçado pode ser encontrado no bloco de notas, e a coordenada do elemento azul está abaixo da ferramenta.'
                 },
                 { //B
@@ -87,7 +87,7 @@ var Questoes = [{ //Parte 1
                     associado: true,
                     selecionada: selecionouA3_P3_Q5_A,
                     enunciado: 'Movendo o <a id="elemento_azul1">elemento azul</a> destacado, posicione-o de tal forma que sua distância até a origem seja igual a um desvio-padrão da variável "altura".',
-                    msgErro: 'Verifique se o ponto está posicionado no valor do desvio-padrão da altura.',
+                    msgErro: 'Verifique se o ponto está posicionado no valor do desvio-padrão da altura (confira no bloco de notas). Observe a legenda “Desvio Padrão da Altura” abaixo do gráfico.',
                     msgAjuda: 'O valor do desvio padrão da altura pode ser encontrado no bloco de notas.'
                 },
                 { //B
@@ -97,7 +97,7 @@ var Questoes = [{ //Parte 1
                     selecionada: selecionouA3_P3_Q5_B,
                     enunciado: 'O retângulo destacado representa a região contida no intervalo de 3 desvios-padrão em torno da média. De acordo com o tamanho de sua amostra, que proporção das alturas está contida nesse intervalo?',
                     msgErro: 'Divida a quantidade de dados dentro do retângulo pela quantidade total de dados do gráfico.',
-                    msgAjuda: 'Dê a resposta com duas casas decimais.'
+                    //msgAjuda: 'Dê a resposta com duas casas decimais.'
                 }
             ]
         }
@@ -136,7 +136,7 @@ var Questoes = [{ //Parte 1
                         { value: '2', label: 'Negativo' },
                         { value: '3', label: 'Zero' }
                     ],
-                    msgErro: 'Verifique o sinal da multiplicação.'
+                    msgErro: 'Verifique o sinal da resposta do produto encontrado no Item A.'
                 },
                 { //C
                     tipo: 'multipla_escolha',
